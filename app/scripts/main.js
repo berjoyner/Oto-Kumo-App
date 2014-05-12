@@ -4,40 +4,45 @@ SC.initialize({
 
 $(document).ready(function() {
 
-// 	SC.get('/tracks', { q: 'genres', license: 'cc-by-sa' }, function(tracks) {
-//   	console.log(tracks);
-// });
+$('form').on('submit', function(e){
+	e.preventDefault();
 
-SC.get('/tracks/293', function(track){
-    SC.oEmbed(track.permalink_url,
-    document.getElementById('player'));
-   });
+	var userTrack = $('#find').val();
+	console.log(userTrack);
 
+	SC.get('/tracks', { genres: userTrack, bpm: { from: 120 } }, function(tracks) {
+	  console.log(tracks);
+	  console.log(loadTracks);
+		
+	  var listing = tracks.data;
+	  console.log(listing);
 
+	  SC.oEmbed(tracks.permalink_url,
+    		document.getElementById('player')
+
+		);
+	});
+});
 });
 
-// function playSound (genre){
-// 	SC.get('/tracks', {
-// 		genres: genre,
-// 		bpm: {
-// 			from: 100
-// 		}
-// 	}, function(tracks) {
-// 		var random = Math.floor(Math.random() * 49);
-// 		SC.oEmbed(tracks[random].uri, { auto_play: true}, document.getElementById('target'));
-// 	});
-// }
+	  // var tracker = {
+	  // 		url: $('permalink_url').val(),
+	  // };
 
-// window.onload = function() {
-// 	SC.initialize({
-// 		client_id:'38260eb937ab3e39bd79b1344c8fee9c'
-// 	});
-// 	var menuLinks = document.getElementsByClassName('genre');
-// 	for(var i =0; i < menuLinks.length; i++) {
-// 		var menuLink = menuLinks[i];
-// 		menuLink.onclick = function(e) {
-// 			e.preventDefault();
-// 			playSound(menuLink.innerHTML);
-// 		};
-// 	}
-// };
+	  // console.log(tracker);
+// 	  var html = '';
+
+// 	  for(var i=0, l=listing.length; i<l; i++) {
+//         var obj = listing[i].data;
+
+// 	  var genre = obj.genre;
+
+// 	  alert(obj.genre);
+
+// 	  // htm += '<ul '+genre+' class="songList" </ul>';
+
+// SC.get('/tracks/293', function(track){
+//     SC.oEmbed(track.permalink_url,
+//     document.getElementById('player'));
+//    });
+

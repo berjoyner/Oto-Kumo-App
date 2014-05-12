@@ -18,7 +18,7 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="scripts/jquery-1.11.0.min.js"></script>
         <script src="../bower_components/modernizr/modernizr.js"></script>
-        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script src="http://connect.soundcloud.com/sdk.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 
@@ -29,12 +29,17 @@
         <![endif]-->
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Type a Genre Here">
+            <input type="text" class="form-control" id="find" placeholder="Type a Genre Here">
           </div>
-            <button type="submit" class="btn btn-info">1, 2, KUMO!</button>
+            <button type="submit" class="btn btn-info" id="loadTracks" >1, 2, KUMO!</button>
         </form>
 
          <div id="player"></div>  
+         
+         <div id="songs">
+            <ul class="songList">
+            </ul>
+         </div>
 
 
         <!-- build:js scripts/vendor.js -->
