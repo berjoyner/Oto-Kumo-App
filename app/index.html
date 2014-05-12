@@ -16,8 +16,10 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="scripts/jquery-1.11.0.min.js"></script>
         <script src="../bower_components/modernizr/modernizr.js"></script>
-        <script src="http://connect.soundcloud.com/sdk.js"></script>
+        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script src="scripts/main.js"></script>
         <!-- endbuild -->
 
     </head>
@@ -25,19 +27,19 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Type a Genre Here">
+          </div>
+            <button type="submit" class="btn btn-info">1, 2, KUMO!</button>
+        </form>
 
-
-        <ul>
-            <li><a href="#" class="genre">dubstep</a></li>
-            <li><a href="#" class="genre">Electronic</a></li>
-            <li><a href="#" class="genre">Punk</a></li>
-        </ul>
-    
-        <div id="target"></div>
+         <div id="player"></div>  
 
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
@@ -68,7 +70,7 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
+        
         <!-- endbuild -->
 </body>
 </html>
