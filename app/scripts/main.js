@@ -28,32 +28,21 @@ $('form').on('submit', function(e){
 
 	  console.log(obj);
 
-	  var genres = obj.genres;
+	  // var genres = obj.genres;
 
 ///// SoundCloud's own SDK for JavaScript- Embedding the Video Player
 
-	  SC.oEmbed(obj.permalink_url,
+	  SC.oEmbed(obj.permalink_url,{ auto_play: true },
     		document.getElementById('player'));
 
 	  	html += '<ul class="songList" </ul>';
 
-		} //end for loop
+	  
+		}; //end for loop
 
-		});
+    });
 
-///// SoundCloud's own SDK for JavaScript- Pagination
+});	
 
-	var page_size = 10;
-
-			SC.get('/tracks', { limit: page_size }, function(tracks) {
-			  // first page of tracks
-			});
-
-			SC.get('/tracks', { limit: page_size, offset: page_size }, function(tracks) {
-			  // second page of tracks
-	});
-});
-
-});
-	
+});	
 
