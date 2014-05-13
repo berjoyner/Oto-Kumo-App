@@ -14,12 +14,14 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="scripts/jquery-1.11.0.min.js"></script>
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <script src="http://connect.soundcloud.com/sdk.js"></script>
         <script src="scripts/main.js"></script>
+
         <!-- endbuild -->
 
     </head>
@@ -27,7 +29,7 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <form class="navbar-form navbar-left" role="search">
+        <form role="search">
           <div class="form-group">
             <input type="text" class="form-control" id="find" placeholder="Type a Genre Here">
           </div>
@@ -40,6 +42,10 @@
             <ul class="songList">
             </ul>
          </div>
+
+         <footer>
+            <p class="tagline"><span class="name">Oto Kumo</span><span class="sub"> soundcloud search-based music player</span></p>
+        </footer>
 
 
         <!-- build:js scripts/vendor.js -->

@@ -14,7 +14,7 @@ $('form').on('submit', function(e){
 	var userTrack = $('#find').val();
 	console.log(userTrack);
 
-///// SoundCloud's own SDK for Javascript- GET from database 
+///// SoundCloud's own SDK for JavaScript- GET from database 
 
 	SC.get('/tracks', { genres: userTrack, bpm: { from: 120 } }, function(tracks) {
 	  console.log(tracks);
@@ -30,7 +30,7 @@ $('form').on('submit', function(e){
 
 	  var genres = obj.genres;
 
-///// SoundCloud's own SDK for Javascript- Embedding the Video Player
+///// SoundCloud's own SDK for JavaScript- Embedding the Video Player
 
 	  SC.oEmbed(obj.permalink_url,
     		document.getElementById('player'));
@@ -38,6 +38,19 @@ $('form').on('submit', function(e){
 	  	html += '<ul class="songList" </ul>';
 
 		} //end for loop
+
+		});
+
+///// SoundCloud's own SDK for JavaScript- Pagination
+
+	var page_size = 10;
+
+			SC.get('/tracks', { limit: page_size }, function(tracks) {
+			  // first page of tracks
+			});
+
+			SC.get('/tracks', { limit: page_size, offset: page_size }, function(tracks) {
+			  // second page of tracks
 	});
 });
 
